@@ -4,5 +4,23 @@
         <name>MS.MediCenter.WebAPI</name>
     </assembly>
     <members>
+        <member name="T:MS.MediCenter.WebAPI.Controllers.Security.SecurityController">
+            <summary>
+            Controlador Security
+            </summary>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Controllers.Security.SecurityController.#ctor(MS.MediCenter.Application.Interfaces.IUnitOfWork)">
+            <summary>
+            Constructor Security
+            </summary>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Controllers.Security.SecurityController.GetById(System.Int32)">
+            <summary>
+            Método para obtener un usuario por ID
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
