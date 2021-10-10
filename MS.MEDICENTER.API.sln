@@ -3,13 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.MediCenter.Application", "MS.MediCenter.Application\MS.MediCenter.Application.csproj", "{765A4E97-0420-4F48-A54E-D744CF44A2CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.MediCenter.Application", "MS.MediCenter.Application\MS.MediCenter.Application.csproj", "{765A4E97-0420-4F48-A54E-D744CF44A2CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.MediCenter.Core", "MS.MediCenter.Core\MS.MediCenter.Core.csproj", "{5987A571-7EBC-4FA8-8813-66D4E95217EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.MediCenter.Core", "MS.MediCenter.Core\MS.MediCenter.Core.csproj", "{5987A571-7EBC-4FA8-8813-66D4E95217EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.MediCenter.Infrastructure", "MS.MediCenter.Infrastructure\MS.MediCenter.Infrastructure.csproj", "{CB4F4026-8E3F-453E-BF8D-1C228A48498E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.MediCenter.Infrastructure", "MS.MediCenter.Infrastructure\MS.MediCenter.Infrastructure.csproj", "{CB4F4026-8E3F-453E-BF8D-1C228A48498E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.MediCenter.WebAPI", "MS.MediCenter.WebAPI\MS.MediCenter.WebAPI.csproj", "{85B52347-8E04-4482-AACB-5321AC396BEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.MediCenter.WebAPI", "MS.MediCenter.WebAPI\MS.MediCenter.WebAPI.csproj", "{85B52347-8E04-4482-AACB-5321AC396BEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{273F974B-C4B3-4EA2-BCBD-036A01705069}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{E7C6F876-64D5-480F-8D61-3526C11ABDC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{D3ACD644-65FB-4637-BB78-5225C28E0E90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{AC571B5C-40E0-4B65-859E-59BB01232EB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.MediCenter.Shared", "MS.MediCenter.Shared\MS.MediCenter.Shared.csproj", "{A86636BF-B67F-4750-88AA-475607BA486E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{C0B43569-6F50-4FBA-AE2B-EA601F265067}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +45,24 @@ Global
 		{85B52347-8E04-4482-AACB-5321AC396BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85B52347-8E04-4482-AACB-5321AC396BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85B52347-8E04-4482-AACB-5321AC396BEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A86636BF-B67F-4750-88AA-475607BA486E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A86636BF-B67F-4750-88AA-475607BA486E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A86636BF-B67F-4750-88AA-475607BA486E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A86636BF-B67F-4750-88AA-475607BA486E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{765A4E97-0420-4F48-A54E-D744CF44A2CD} = {AC571B5C-40E0-4B65-859E-59BB01232EB8}
+		{5987A571-7EBC-4FA8-8813-66D4E95217EA} = {E7C6F876-64D5-480F-8D61-3526C11ABDC5}
+		{CB4F4026-8E3F-453E-BF8D-1C228A48498E} = {D3ACD644-65FB-4637-BB78-5225C28E0E90}
+		{85B52347-8E04-4482-AACB-5321AC396BEE} = {C0B43569-6F50-4FBA-AE2B-EA601F265067}
+		{E7C6F876-64D5-480F-8D61-3526C11ABDC5} = {273F974B-C4B3-4EA2-BCBD-036A01705069}
+		{D3ACD644-65FB-4637-BB78-5225C28E0E90} = {273F974B-C4B3-4EA2-BCBD-036A01705069}
+		{AC571B5C-40E0-4B65-859E-59BB01232EB8} = {273F974B-C4B3-4EA2-BCBD-036A01705069}
+		{A86636BF-B67F-4750-88AA-475607BA486E} = {D3ACD644-65FB-4637-BB78-5225C28E0E90}
+		{C0B43569-6F50-4FBA-AE2B-EA601F265067} = {273F974B-C4B3-4EA2-BCBD-036A01705069}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E37BFAC3-601D-4BC7-A930-FAB4C004E788}

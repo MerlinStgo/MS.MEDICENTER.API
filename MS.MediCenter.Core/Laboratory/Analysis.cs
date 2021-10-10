@@ -1,6 +1,8 @@
-﻿namespace MS.MediCenter.Core.Laboratory
+﻿using MS.MediCenter.Core.Common;
+
+namespace MS.MediCenter.Core.Laboratory
 {
-    public class Analysis
+    public class Analysis : AuditableBaseEntity
     {
     }
 }
