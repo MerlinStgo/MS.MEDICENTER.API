@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MS.MediCenter.Application.Interfaces;
-using MS.MediCenter.Application.Wrappers;
+using MS.MediCenter.Application.Features.Security.Commands;
 using System.Threading.Tasks;
-using MS.MediCenter.Core.Security;
-using System;
 
 namespace MS.MediCenter.WebAPI.Controllers.v1.Security
 {
@@ -14,14 +11,17 @@ namespace MS.MediCenter.WebAPI.Controllers.v1.Security
     public class SecurityController : BaseApiController
     {
         //private readonly IUnitOfWork _unitOfWork;
+        
         ///// <summary>
-        ///// Constructor Security
+        ///// 
         ///// </summary>
         ///// <param name="unitOfWork"></param>
         //public SecurityController(IUnitOfWork unitOfWork)
         //{
         //    _unitOfWork = unitOfWork;
         //}
+
+
 
         ///// <summary>
         ///// Método para obtener un usuario por ID
@@ -41,11 +41,15 @@ namespace MS.MediCenter.WebAPI.Controllers.v1.Security
         //        return Ok(new Response<User>(e.Message));
         //    }
         //}
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Post()
+        public async Task<IActionResult> Post(CreateUserCommand command)
         {
-            return Ok();
+            var data = await Mediator.Send(command);
+            return Ok(data);
         }
     }
 }

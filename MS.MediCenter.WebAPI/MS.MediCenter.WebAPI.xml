@@ -4,22 +4,65 @@
         <name>MS.MediCenter.WebAPI</name>
     </assembly>
     <members>
-        <member name="T:MS.MediCenter.WebAPI.Controllers.Security.SecurityController">
+        <member name="T:MS.MediCenter.WebAPI.Controllers.BaseApiController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.MediCenter.WebAPI.Controllers.BaseApiController.Mediator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MS.MediCenter.WebAPI.Controllers.v1.Security.SecurityController">
             <summary>
             Controlador Security
             </summary>
         </member>
-        <member name="M:MS.MediCenter.WebAPI.Controllers.Security.SecurityController.#ctor(MS.MediCenter.Application.Interfaces.IUnitOfWork)">
+        <member name="M:MS.MediCenter.WebAPI.Controllers.v1.Security.SecurityController.Post(MS.MediCenter.Application.Features.Security.Commands.CreateUserCommand)">
             <summary>
-            Constructor Security
+            
             </summary>
-            <param name="unitOfWork"></param>
+            <returns></returns>
         </member>
-        <member name="M:MS.MediCenter.WebAPI.Controllers.Security.SecurityController.GetById(System.Int32)">
+        <member name="T:MS.MediCenter.WebAPI.Extensions.AppExtensions">
             <summary>
-            Método para obtener un usuario por ID
+            
             </summary>
-            <param name="Id"></param>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Extensions.AppExtensions.UseErrorHandlerException(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:MS.MediCenter.WebAPI.Extensions.ServiceExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Extensions.ServiceExtensions.AddApiVersioningExtension(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:MS.MediCenter.WebAPI.Middlewares.ErrorHandlerMiddleware">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Middlewares.ErrorHandlerMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Middlewares.ErrorHandlerMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
             <returns></returns>
         </member>
     </members>
