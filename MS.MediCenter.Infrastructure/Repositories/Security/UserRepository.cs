@@ -1,14 +1,14 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Configuration;
-using MS.MediCenter.Application.Interfaces.Security;
+using MS.MediCenter.Application.Interfaces;
 using MS.MediCenter.Core.Security;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Data;
+using System.Threading.Tasks;
 
 namespace MS.MediCenter.Infrastructure.Repositories.Security
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : IRepositoryAsync<User>
     {
         private readonly ConnectionFactory _connectionFactory;
         public UserRepository(IConfiguration configuration)
@@ -16,10 +16,10 @@ namespace MS.MediCenter.Infrastructure.Repositories.Security
             _connectionFactory = new ConnectionFactory(configuration);
         }
 
-        public async Task<int> AddAsync(User entity)
+        public async Task<User> AddAsync(User entity)
         {
             var sql = "SP_I_USUARIO";
-            using(var cn = _connectionFactory.GetConnectionMS)
+            using (var cn = _connectionFactory.GetConnectionMS)
             {
                 var param = new DynamicParameters();
                 param.Add("@Nombre", entity.Nombre, DbType.String);
@@ -30,11 +30,13 @@ namespace MS.MediCenter.Infrastructure.Repositories.Security
 
                 await cn.ExecuteAsync(sql, param, commandType: CommandType.StoredProcedure);
 
-                return param.Get<int>("@Id");
+                entity.Id = param.Get<int>("@Id");
+
+                return entity;
             }
         }
 
-        public Task<int> DeleteAsync(int id)
+        public Task<User> DeleteAsync(int id)
         {
             throw new System.NotImplementedException();
         }
@@ -54,9 +56,10 @@ namespace MS.MediCenter.Infrastructure.Repositories.Security
             }
         }
 
-        public Task<int> UpdateAsync(User entity)
+        public Task<User> UpdateAsync(User entity)
         {
             throw new System.NotImplementedException();
         }
+
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MS.MediCenter.Application;
 using MS.MediCenter.Infrastructure.Repositories;
+using MS.MediCenter.WebAPI.Extensions;
 
 namespace MS.MediCenter.WebAPI
 {
@@ -22,7 +23,7 @@ namespace MS.MediCenter.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplicationLayer();
-            services.AddInfrastructure();
+            //services.AddInfrastructure();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -50,7 +51,7 @@ namespace MS.MediCenter.WebAPI
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseErrorHandlerException();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

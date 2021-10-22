@@ -2,7 +2,7 @@
 
 namespace MS.MediCenter.Application.Interfaces.Security
 {
-    public interface IUserRepository : IGenericRepository<User>
+    public interface IUserRepository<T> : IRepositoryAsync<T> where T : class
     {
     }
 }

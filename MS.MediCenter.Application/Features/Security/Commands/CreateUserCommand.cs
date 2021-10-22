@@ -1,5 +1,8 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
+using MS.MediCenter.Application.Interfaces;
 using MS.MediCenter.Application.Wrappers;
+using MS.MediCenter.Core.Security;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MS.MediCenter.Application.Features.Security.Commands
@@ -14,9 +17,21 @@ namespace MS.MediCenter.Application.Features.Security.Commands
 
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Response<int>>
     {
-        public Task<Response<int>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+        private readonly IRepositoryAsync<User> _repositoryAsync;
+        private readonly IMapper _mapper;
+
+        public CreateUserCommandHandler(IRepositoryAsync<User> repositoryAsync, IMapper mapper)
         {
-            throw new System.NotImplementedException();
+            _repositoryAsync = repositoryAsync;
+            _mapper = mapper;
+        }
+
+        public async Task<Response<int>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+        {
+            var nuevoRegistro = _mapper.Map<User>(request);
+            var data = await _repositoryAsync.AddAsync(nuevoRegistro);
+
+            return new Response<int>(data.Id);
         }
     }
 }
