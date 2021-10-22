@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -19,8 +19,7 @@
 
   <ItemGroup>
     <Folder Include="DTOs\" />
-    <Folder Include="Features\DrugStore\Commands\" />
-    <Folder Include="Features\DrugStore\Queries\" />
+    <Folder Include="Features\Sales\Queries\" />
     <Folder Include="Filters\" />
   </ItemGroup>
 

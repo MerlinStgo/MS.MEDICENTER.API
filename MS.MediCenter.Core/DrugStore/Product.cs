@@ -5,22 +5,13 @@ namespace MS.MediCenter.Core.DrugStore
 {
     public class Product : AuditableBaseEntity
     {
-        public DateTime? FechaVencimiento;
-
-        //public DateTime? FechaVencimiento
-        //{
-        //    get => _fechaVencimiento; 
-        //    set
-        //    {
-        //        if(_fechaVencimiento.Value >= DateTime.Now.AddDays(-120))
-        //        {
-        //            throw new Exception(string.Empty);
-        //        }
-        //        else
-        //        {
-        //            _fechaVencimiento = value;
-        //        }
-        //    }
-        //}
+        public string Nombre { get; set; }
+        public DateTime? FechaVencimiento { get; set; }
+        public decimal PrecioVenta { get; set; }
+        public decimal PrecioCompra { get; set; }
+        public decimal Stock { get; set; }
+        public int Categotria { get; set; }
+        public int Proveedor { get; set; }
+        public int Presentacion { get; set; }
     }
 }
