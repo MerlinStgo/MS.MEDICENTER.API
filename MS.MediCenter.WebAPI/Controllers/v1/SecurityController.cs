@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MS.MediCenter.Application.Features.Security.Commands;
+using MS.MediCenter.Application.Features.Security.Queries;
 using System.Threading.Tasks;
 
 namespace MS.MediCenter.WebAPI.Controllers.v1.Security
@@ -10,40 +11,10 @@ namespace MS.MediCenter.WebAPI.Controllers.v1.Security
     [ApiVersion("1.0")]
     public class SecurityController : BaseApiController
     {
-        //private readonly IUnitOfWork _unitOfWork;
-        
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="unitOfWork"></param>
-        //public SecurityController(IUnitOfWork unitOfWork)
-        //{
-        //    _unitOfWork = unitOfWork;
-        //}
-
-
-
-        ///// <summary>
-        ///// Método para obtener un usuario por ID
-        ///// </summary>
-        ///// <param name="Id"></param>
-        ///// <returns></returns>
-        //[HttpGet("{Id}")]
-        //public async Task<IActionResult> GetById(int Id)
-        //{
-        //    try
-        //    {
-        //        var data = await _unitOfWork.Users.GetByIdAsync(Id);
-        //        return Ok(new Response<User>(data));
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return Ok(new Response<User>(e.Message));
-        //    }
-        //}
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="command"></param>
         /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Post(CreateUserCommand command)
@@ -51,5 +22,35 @@ namespace MS.MediCenter.WebAPI.Controllers.v1.Security
             var data = await Mediator.Send(command);
             return Ok(data);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        //Get: api/<controller>/1
+        [HttpGet("{id}")]
+        public async Task<ActionResult> Get(int id)
+        {
+            return Ok(await Mediator.Send(new GetUserByIdQuery { Id = id }));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
+        [HttpGet()]
+        public async Task<ActionResult> GetAll([FromQuery] GetAllUserParameters filter)
+        {
+            return Ok(await Mediator.Send(new GetAllUserQuery
+            {
+                PageNumber = filter.PageNumber,
+                PageSize = filter.PageSize,
+                Nombre = filter.Nombre,
+                Usuario = filter.Usuario
+            }));
+        }
+
     }
 }

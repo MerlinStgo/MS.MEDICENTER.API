@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MS.MediCenter.Infrastructure.Repositories.Security
 {
-    public class UserRepository : IRepositoryAsync<User>
+    public class UserRepository<T> : IRepositoryAsync<User>
     {
         private readonly ConnectionFactory _connectionFactory;
         public UserRepository(IConfiguration configuration)

@@ -23,6 +23,7 @@
             <summary>
             
             </summary>
+            <param name="command"></param>
             <returns></returns>
         </member>
         <member name="T:MS.MediCenter.WebAPI.Extensions.AppExtensions">
@@ -64,6 +65,35 @@
             </summary>
             <param name="context"></param>
             <returns></returns>
+        </member>
+        <member name="T:MS.MediCenter.WebAPI.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:MS.MediCenter.WebAPI.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
         </member>
     </members>
 </doc>
