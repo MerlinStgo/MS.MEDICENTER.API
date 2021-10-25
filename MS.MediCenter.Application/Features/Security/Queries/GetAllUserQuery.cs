@@ -30,7 +30,7 @@ namespace MS.MediCenter.Application.Features.Security.Queries
             
             public Task<PagedResponse<List<UserDto>>> Handle(GetAllUserQuery request, CancellationToken cancellationToken)
             {
-                throw new System.NotImplementedException();
+                var usuario = _repositoryAsync
             }
         }
     }

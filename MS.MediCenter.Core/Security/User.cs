@@ -8,5 +8,6 @@ namespace MS.MediCenter.Core.Security
         public string Contrasenia { get; set; }
         public bool Estado { get; set; }
         public int Perfil { get; set; }
+
     }
 }

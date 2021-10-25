@@ -18,7 +18,7 @@ namespace MS.MediCenter.Infrastructure.Repositories.Security
 
         public async Task<User> AddAsync(User entity)
         {
-            var sql = "SP_I_USUARIO";
+            var sql = "sp_i_usuario";
             using (var cn = _connectionFactory.GetConnectionMS)
             {
                 var param = new DynamicParameters();
@@ -36,11 +36,6 @@ namespace MS.MediCenter.Infrastructure.Repositories.Security
             }
         }
 
-        public Task<User> DeleteAsync(int id)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public Task<IReadOnlyList<User>> GetAllAsync()
         {
             throw new System.NotImplementedException();
@@ -48,7 +43,7 @@ namespace MS.MediCenter.Infrastructure.Repositories.Security
 
         public async Task<User> GetByIdAsync(int id)
         {
-            var sql = "SP_S_USER_ID";
+            var sql = "sp_s_user_id";
             using (var cn = _connectionFactory.GetConnectionMS)
             {
                 var result = await cn.QuerySingleOrDefaultAsync<User>(sql, new { Id = id });
@@ -58,7 +53,12 @@ namespace MS.MediCenter.Infrastructure.Repositories.Security
 
         public Task<User> UpdateAsync(User entity)
         {
-            throw new System.NotImplementedException();
+            var sql = "sp_u_userio";
+            using (var cn = _connectionFactory.GetConnectionMS)
+            {
+                var param = new DynamicParameters();
+
+            }
         }
 
     }
