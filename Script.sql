@@ -61,7 +61,7 @@ create table Empresas.Sucursal
 	Direccion	varchar(250)
 
 	constraint pk_sucursal primary key(IdSucursal),
-	constraint fk_empleado_empresa foreign key (IdEmpresa) references Empresas.Empresa(IdEmpresa)
+	constraint fk_empleado_sucursal foreign key (IdEmpresa) references Empresas.Empresa(IdEmpresa)
 )
 go
 create schema Almacen;
