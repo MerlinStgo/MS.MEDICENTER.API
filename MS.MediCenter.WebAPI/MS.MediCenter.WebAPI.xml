@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MS.MediCenter.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:MS.MediCenter.WebAPI.Controllers.BaseApiController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.MediCenter.WebAPI.Controllers.BaseApiController.Mediator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MS.MediCenter.WebAPI.Controllers.v1.Security.SecurityController">
+            <summary>
+            Controlador Security
+            </summary>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Controllers.v1.Security.SecurityController.Post(MS.MediCenter.Application.Features.Security.Commands.CreateUserCommand)">
+            <summary>
+            
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MS.MediCenter.WebAPI.Extensions.AppExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Extensions.AppExtensions.UseErrorHandlerException(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:MS.MediCenter.WebAPI.Extensions.ServiceExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Extensions.ServiceExtensions.AddApiVersioningExtension(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:MS.MediCenter.WebAPI.Middlewares.ErrorHandlerMiddleware">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Middlewares.ErrorHandlerMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Middlewares.ErrorHandlerMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MS.MediCenter.WebAPI.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:MS.MediCenter.WebAPI.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
