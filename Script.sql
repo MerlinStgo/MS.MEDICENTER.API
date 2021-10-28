@@ -119,6 +119,7 @@ create table Almacen.Producto
 (
 	IdProducto		numeric(18,0) identity(1,1),
 	IdEmpresa		numeric(5,0),
+	IdSucursal		numeric(5,0),
 	Nombre			varchar(400),
 	PrincipioActivo varchar(150),
 	Composicion		varchar(250),
@@ -131,7 +132,8 @@ create table Almacen.Producto
 	IdAfectacionIgv numeric(5,0),
 	constraint pk_producto primary key (IdProducto),
 	constraint fk_producto_empresa		foreign key (IdEmpresa)		references Empresas.Empresa(IdEmpresa),
-	constraint fk_producto_presentacion foreign key (IdPresentacion) references Almacen.Presentacion(IdPresentacion),
+	constraint fk_producto_sucursal		foreign key (IdSucursal)	references Empresas.Sucursal(IdSucursal),
+	constraint fk_producto_presentacion foreign key (IdPresentacion) 	references Almacen.Presentacion(IdPresentacion),
 	constraint fk_producto_categoria	foreign key (IdCategoria)	references Almacen.Categoria(IdCategoria),
 	constraint fk_producto_afectacionIgv foreign key (IdAfectacionIgv)	references Almacen.AfectacionIgv(IdAfectacionIgv)
 )
@@ -140,7 +142,7 @@ create table Almacen.MedicamentoFabricante
 (
 	IdMedicamento numeric(18,0),
 	IdFabricante  numeric(5,0),
-	IdEmpresa	  numeric(5,0),
+	IdEmpresa     numeric(5,0),
 	constraint fk_medicamentofabricante_producto   foreign key (IdMedicamento) references Almacen.Producto(IdProducto),
 	constraint fk_medicamentofabricante_fabricante foreign key (IdFabricante)  references Almacen.Fabricante(IdFabricante),
 	constraint fk_medicamentofabricante_empresa	   foreign key (IdEmpresa)	   references Empresas.Empresa(IdEmpresa)
@@ -181,7 +183,7 @@ create table Empresas.Moneda
 	Estado		bit,
 	Venta		numeric(8,4),
 	Compra		numeric(8,4),
-	FechaAxtualizacion datetime
+	FechaActualizacion datetime
 )
 go
 create table Empresas.TipoCambio
