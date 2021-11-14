@@ -26,6 +26,20 @@
             <param name="command"></param>
             <returns></returns>
         </member>
+        <member name="M:MS.MediCenter.WebAPI.Controllers.v1.Security.SecurityController.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MS.MediCenter.WebAPI.Controllers.v1.Security.SecurityController.GetAll(MS.MediCenter.Application.Features.Security.Queries.GetAllUserParameters)">
+            <summary>
+            
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
         <member name="T:MS.MediCenter.WebAPI.Extensions.AppExtensions">
             <summary>
             

@@ -38,7 +38,7 @@ namespace MS.MediCenter.WebAPI
             services.AddApplicationLayer();
             services.AddControllers();
             services.AddApiVersioningExtension();
-            services.AddInfrastructure();
+            services.AddInfrastructure(Configuration);
             services.AddSwaggerGen(c =>
             {
                 c.IncludeXmlComments(string.Format(@"{0}\MS.MediCenter.WebAPI.xml", System.AppDomain.CurrentDomain.BaseDirectory));

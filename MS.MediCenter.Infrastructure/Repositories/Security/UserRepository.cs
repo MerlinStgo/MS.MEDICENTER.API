@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MS.MediCenter.Infrastructure.Repositories.Security
 {
-    public class UserRepository<T> : IRepositoryAsync<User>
+    public class UserRepository : IRepositoryAsync<User>
     {
         private readonly ConnectionFactory _connectionFactory;
         public UserRepository(IConfiguration configuration)
@@ -36,9 +36,15 @@ namespace MS.MediCenter.Infrastructure.Repositories.Security
             }
         }
 
-        public Task<IReadOnlyList<User>> GetAllAsync()
+        public async Task<IEnumerable<User>> GetAllAsync()
         {
-            throw new System.NotImplementedException();
+            var sql = "sp_s_usuario";
+
+            using (var cn = _connectionFactory.GetConnectionMS)
+            {
+                var result = await cn.QueryAsync<User>(sql);
+                return result;
+            }    
         }
 
         public async Task<User> GetByIdAsync(int id)
@@ -53,12 +59,13 @@ namespace MS.MediCenter.Infrastructure.Repositories.Security
 
         public Task<User> UpdateAsync(User entity)
         {
-            var sql = "sp_u_userio";
-            using (var cn = _connectionFactory.GetConnectionMS)
-            {
-                var param = new DynamicParameters();
+            //var sql = "sp_u_userio";
+            //using (var cn = _connectionFactory.GetConnectionMS)
+            //{
+            //    var param = new DynamicParameters();
 
-            }
+            //}
+            throw new System.NotImplementedException();
         }
 
     }
