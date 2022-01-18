@@ -1,0 +1,101 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="form-control-sm">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Productos</li>
+    </ol>
+</nav>
+<div class="card">
+    <div class="card-header">
+        <form>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="lblNombre" class="col-form-label form-control-sm">Nombre</label>
+                    <input type="text" class="form-control form-control-sm" id="txtBuscarNombre">
+                </div>
+                <div class="col-sm-4">
+                    <label for="lblTipoProducto" class="col-form-label form-control-sm">Tipo Producto</label>
+                    <select id="cbTipoProducto" class="form-select form-select-sm" aria-label="Default select example">
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <label for="lblFechaBusqueda" class="col-form-label form-control-sm">Fecha</label>
+                    <input type="date" class="form-control form-control-sm" id="txtFecha">
+                </div>
+                <div class="col-sm-2 text-start mt-4">
+                    <button class="btn btn-sm btn-warning" type="submit" id="btnBuscar"><i class="fas fa-search"></i> Buscar</button>
+                    <button class="btn btn-sm btn-danger" type="reset" id="btnLimpiar"><i class="fas fa-broom"></i> Limpiar</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 text-start mt-2">
+                    <button class="btn btn-sm btn-primary" type="button" id="btnNuevoProducto"><i class="fas fa-plus-circle"></i> Crear Nuevo Producto</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="card-body">
+
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Gestionar Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <form>
+                        <div class="row m-0">
+                            <div class="col-4">
+                                <label for="lblCodigoProducto" class="col-form-label form-control-sm">Código</label>
+                                <input type="text" class="form-control form-control-sm" id="lblCodigoProducto">
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="lblTipoProducto" class="col-form-label form-control-sm">Tipo Producto</label>
+                                <select id="cbTipoProducto" class="form-select form-select-sm" aria-label="Default select example">
+                                </select>
+                            </div>
+                            <div class="col-3">
+                                <label for="lblPrincipioActi" class="col-form-label form-control-sm">Principio Act.</label>
+                                <select id="cbPrincipioActi" class="form-select form-select-sm" aria-label="Default select example">
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <label for="lblComposicion" class="col-form-label form-control-sm">Composición</label>
+                                <input type="text" class="form-control form-control-sm" id="lblComposicion">
+                            </div>
+                        </div>
+                        <div class="row m-0">
+                            <div class="col-2">
+                                <label for="lblPrecioCompra" class="col-form-label form-control-sm">Precio Compra</label>
+                                <input type="number" class="form-control form-control-sm" id="lblPrecioCompra">
+                            </div>
+                            <div class="col-2">
+                                <label for="lblPrecioVenta" class="col-form-label form-control-sm">Precio Venta</label>
+                                <input type="number" class="form-control form-control-sm" id="lblPrecioVenta">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/js/Farmacia/Productos.js"></script>
+}
